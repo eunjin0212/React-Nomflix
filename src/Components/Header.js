@@ -25,7 +25,8 @@ const Item = styled.li`
   width: 80px;
   height: 50px;
   text-align: center;
-  border-bottom: 5px solid ${(props) => (props.current ? "red" : "transparent")};
+  border-bottom: 5px solid
+    ${(props) => (props.current ? "#E50914" : "transparent")};
 `;
 const SLink = styled(Link)`
   height: 50px;
@@ -34,7 +35,7 @@ const SLink = styled(Link)`
   justify-content: center;
 `;
 
-export default withRouter((props) => (
+const HeaderC = (props) => {
   <Header>
     <List>
       <Item current={false}>
@@ -47,5 +48,7 @@ export default withRouter((props) => (
         <SLink to="/search">Search</SLink>
       </Item>
     </List>
-  </Header>
-));
+  </Header>;
+};
+
+export default withRouter(HeaderC);
