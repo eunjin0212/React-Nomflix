@@ -1,8 +1,8 @@
 import React from "react";
 import HomePresenter from "./HomePresenter";
 import { moviesApi } from "../../api";
+
 export default class extends React.Component {
-  // eslint-disable-line no-unused-vars
   state = {
     upcoming: null,
     nowPlaying: null,
@@ -14,9 +14,19 @@ export default class extends React.Component {
   async componentDidMount() {
     try {
       const {
-        data: { results },
+        data: { results: nowPlaying },
       } = await moviesApi.nowPlaying();
-      console.log(results);
+      const {
+        data: { results: upcoming },
+      } = await moviesApi.upcoming();
+      const {
+        data: { results: popular },
+      } = await moviesApi.popular();
+      this.setState({
+        nowPlaying,
+        upcoming,
+        popular,
+      });
     } catch {
       this.setState({
         error: "Can't find movies information",

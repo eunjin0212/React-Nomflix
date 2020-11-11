@@ -1,6 +1,6 @@
 import React from "react";
 import TVPresenter from "./TVPresenter";
-
+// eslint-disable-next-line
 export default class extends React.Component {
   state = {
     topRated: null,
