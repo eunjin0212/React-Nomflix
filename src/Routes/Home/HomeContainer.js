@@ -1,8 +1,8 @@
-import React, { Component } from "react";
+import React from "react";
 import HomePresenter from "./HomePresenter";
 import { moviesApi } from "api";
 
-class HomeContainer extends Component {
+export default class extends React.Component {
   state = {
     nowPlaying: null,
     upcoming: null,
@@ -22,6 +22,7 @@ class HomeContainer extends Component {
       const {
         data: { results: popular },
       } = await moviesApi.popular();
+
       this.setState({
         nowPlaying,
         upcoming,
@@ -29,7 +30,7 @@ class HomeContainer extends Component {
       });
     } catch {
       this.setState({
-        error: "Can't find movie information.",
+        error: "Can't find movie information.😥",
       });
     } finally {
       this.setState({
@@ -51,5 +52,3 @@ class HomeContainer extends Component {
     );
   }
 }
-
-export default HomeContainer;

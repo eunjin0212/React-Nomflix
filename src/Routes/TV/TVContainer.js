@@ -25,7 +25,7 @@ class TVContainer extends Component {
       this.setState({ topRated, popular, airingToday });
     } catch {
       this.setState({
-        error: "Can't find TV information.",
+        error: "Can't find TV information.😥",
       });
     } finally {
       this.setState({ loading: false });

@@ -11,16 +11,23 @@ class SearchContainer extends Component {
     error: null,
   };
 
-  componentDidMount() {
-    this.handleSubmit();
-  }
-
-  handleSubmit = () => {
+  handleSubmit = (event) => {
+    event.preventDefault();
     const { searchTerm } = this.state;
     if (searchTerm !== "") {
       this.searchByTerm();
     }
   };
+  updateTerm = (event) => {
+    const {
+      target: { value },
+    } = event;
+
+    this.setState({
+      searchTerm: value,
+    });
+  };
+
   searchByTerm = async () => {
     const { searchTerm } = this.state;
     this.setState({
@@ -38,7 +45,7 @@ class SearchContainer extends Component {
         tvResults,
       });
     } catch {
-      this.setState({ error: "Can't find results." });
+      this.setState({ error: "Can't find results.😥" });
     } finally {
       this.setState({ loading: false });
     }
@@ -52,6 +59,7 @@ class SearchContainer extends Component {
         searchTerm={searchTerm}
         loading={loading}
         error={error}
+        updateTerm={this.updateTerm}
         handleSubmit={this.handleSubmit}
       />
     );
