@@ -1,8 +1,8 @@
-import { tvApi } from "api";
-import React from "react";
+import React, { Component } from "react";
 import TVPresenter from "./TVPresenter";
-// eslint-disable-next-line
-export default class extends React.Component {
+import { tvApi } from "../../api";
+
+class TVContainer extends Component {
   state = {
     topRated: null,
     popular: null,
@@ -25,12 +25,10 @@ export default class extends React.Component {
       this.setState({ topRated, popular, airingToday });
     } catch {
       this.setState({
-        error: "Can't find TV Show information.",
+        error: "Can't find TV information.",
       });
     } finally {
-      this.setState({
-        loading: false,
-      });
+      this.setState({ loading: false });
     }
   }
 
@@ -47,3 +45,5 @@ export default class extends React.Component {
     );
   }
 }
+
+export default TVContainer;

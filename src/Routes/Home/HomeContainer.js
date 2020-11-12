@@ -1,11 +1,11 @@
-import React from "react";
+import React, { Component } from "react";
 import HomePresenter from "./HomePresenter";
-import { moviesApi } from "../../api";
+import { moviesApi } from "api";
 
-export default class extends React.Component {
+class HomeContainer extends Component {
   state = {
-    upcoming: null,
     nowPlaying: null,
+    upcoming: null,
     popular: null,
     error: null,
     loading: true,
@@ -29,7 +29,7 @@ export default class extends React.Component {
       });
     } catch {
       this.setState({
-        error: "Can't find movies information",
+        error: "Can't find movie information.",
       });
     } finally {
       this.setState({
@@ -39,7 +39,7 @@ export default class extends React.Component {
   }
 
   render() {
-    const { nowPlaying, popular, upcoming, error, loading } = this.state;
+    const { nowPlaying, upcoming, popular, error, loading } = this.state;
     return (
       <HomePresenter
         nowPlaying={nowPlaying}
@@ -51,3 +51,5 @@ export default class extends React.Component {
     );
   }
 }
+
+export default HomeContainer;
