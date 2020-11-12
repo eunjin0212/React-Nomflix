@@ -3,7 +3,7 @@ import DetailPresenter from "./DetailPresenter";
 // eslint-disable-next-line
 import { moviesApi, tvApi } from "../../api";
 
-class DetailContainer extends Component {
+export default class extends React.Component {
   constructor(props) {
     super(props);
     const {
@@ -47,5 +47,3 @@ class DetailContainer extends Component {
     return <DetailPresenter result={result} loading={loading} error={error} />;
   }
 }
-
-export default DetailContainer;
