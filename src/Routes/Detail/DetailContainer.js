@@ -1,6 +1,5 @@
-import React, { Component } from "react";
+import React from "react";
 import DetailPresenter from "./DetailPresenter";
-// eslint-disable-next-line
 import { moviesApi, tvApi } from "../../api";
 
 export default class extends React.Component {
@@ -11,11 +10,12 @@ export default class extends React.Component {
     } = props;
     this.state = {
       result: null,
-      loading: true,
       error: null,
+      loading: true,
       isMovie: pathname.includes("/movie/"),
     };
   }
+
   async componentDidMount() {
     const {
       match: {
@@ -38,12 +38,12 @@ export default class extends React.Component {
     } catch {
       this.setState({ error: "Can't find anything." });
     } finally {
-      this.setState({ loding: false, result });
+      this.setState({ loading: false, result });
     }
   }
+
   render() {
-    const { result, loading, error } = this.state;
-    console.log(result);
-    return <DetailPresenter result={result} loading={loading} error={error} />;
+    const { result, error, loading } = this.state;
+    return <DetailPresenter result={result} error={error} loading={loading} />;
   }
 }

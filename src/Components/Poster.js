@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
+//Style
 const Container = styled.div`
   font-size: 12px;
 `;
@@ -47,6 +48,8 @@ const Year = styled.span`
   color: rgba(255, 255, 255, 0.5);
 `;
 
+//Poster
+
 const Poster = ({ id, imageUrl, title, rating, year, isMovie = false }) => (
   <Link to={isMovie ? `/movie/${id}` : `/show/${id}`}>
     <Container>
@@ -67,8 +70,7 @@ const Poster = ({ id, imageUrl, title, rating, year, isMovie = false }) => (
         </Rating>
       </ImageContainer>
       <Title>
-        {title}
-        {/* {title.length > 18 ? `${title.substring(0, 18)}...` : title} */}
+        {title.length > 18 ? `${title.substring(0, 18)}...` : title}
       </Title>
       <Year>{year}</Year>
     </Container>
