@@ -4,10 +4,10 @@
 
 ## Screens
 
-- [ ] Home
-- [ ] TV Show
-- [ ] Search
-- [ ] Detail
+- [x] Home
+- [x] TV Show
+- [x] Search
+- [x] Detail
 
 ## API Verbs
 
