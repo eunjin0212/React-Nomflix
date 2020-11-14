@@ -11,8 +11,6 @@
 
 ## API Verbs
 
-3d85994113faadbad92f020ed39c18f4
-
 - [x] Now Playing
 - [x] Upcomming ( Movie)
 - [x] Top Rated (TV, Movie)
@@ -21,3 +19,11 @@
 - [x] TV Show Detail
 - [x] Movie Detail
 - [x] Search Movie, TV
+
+## Code Challenges
+
+- [ ] IMDB Link
+- [ ] Tabs inside of Movie / Show Details (YT Videos, Production Company & Countries)
+- [ ] Collections Link
+- [ ] /collections Route
+- [ ] On TV Show, show seasons and creators
