@@ -1,7 +1,7 @@
 import React from "react";
 import DetailPresenter from "./DetailPresenter";
 import { moviesApi, tvApi } from "../../api";
-
+// eslint-disable-next-line
 export default class extends React.Component {
   constructor(props) {
     super(props);

@@ -9,6 +9,7 @@ const Container = styled.div`
   font-size: 32px;
   margin-top: 20px;
 `;
+// eslint-disable-next-line
 export default () => (
   <Container>
     <span role="img" aria-label="Loading">
