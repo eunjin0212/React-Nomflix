@@ -2,16 +2,11 @@ import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
 
-const Container = styled.div`
-  width: 100vw;
-  display: flex;
-  justify-content: center;
-`;
-const Text = styled.span`
-  color: ${(props) => props.color};
-  font-size: 20px;
-`;
-const Message = ({ color, text }) => (
+interface IMessage {
+  color: string;
+  text: string;
+}
+const Message = ({ color, text }: IMessage) => (
   <Container>
     <Text color={color}>{text}</Text>
   </Container>
@@ -22,3 +17,13 @@ Message.propTypes = {
   color: PropTypes.string.isRequired,
 };
 export default Message;
+
+const Container = styled.div`
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+`;
+const Text = styled.span`
+  color: ${(props) => props.color};
+  font-size: 20px;
+`;
