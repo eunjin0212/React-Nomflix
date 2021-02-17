@@ -11,14 +11,14 @@ class SearchContainer extends Component {
     error: null,
   };
 
-  handleSubmit = (event) => {
+  handleSubmit = (event: { preventDefault: () => void; }) => {
     event.preventDefault();
     const { searchTerm } = this.state;
     if (searchTerm !== "") {
       this.searchByTerm();
     }
   };
-  updateTerm = (event) => {
+  updateTerm = (event: { target: { value: any; }; }) => {
     const {
       target: { value },
     } = event;

@@ -50,6 +50,7 @@
   },
   "devDependencies": {
     "@types/react-helmet": "^6.1.0",
+    "@types/react-router-dom": "^5.1.7",
     "@types/styled-components": "^5.1.7",
     "eslint-plugin-react": "^7.21.5"
   }

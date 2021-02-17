@@ -8,7 +8,7 @@ import {
 import Home from "../Routes/Home/index";
 import TV from "../Routes/TV";
 import Header from "./Header";
-import Search from "../Routes/Search";
+import Search from "../Routes/Search/index";
 import Detail from "../Routes/Detail/index";
 // eslint-disable-next-line
 export default () => (
