@@ -1,9 +1,15 @@
-import React from "react";
+import React, { Component } from "react";
 import DetailPresenter from "./DetailPresenter";
 import { moviesApi, tvApi } from "../../api";
+
+interface IDetailContainer {
+  match: any;
+  history: any;
+}
+
 // eslint-disable-next-line
-export default class extends React.Component {
-  constructor(props) {
+export default class extends Component<IDetailContainer> {
+  constructor(props: any) {
     super(props);
     const {
       location: { pathname },
@@ -23,7 +29,7 @@ export default class extends React.Component {
       },
       history: { push },
     } = this.props;
-    const { isMovie } = this.state;
+    const { isMovie }: any = this.state;
     const parsedId = parseInt(id);
     if (isNaN(parsedId)) {
       return push("/");
@@ -43,7 +49,7 @@ export default class extends React.Component {
   }
 
   render() {
-    const { result, error, loading } = this.state;
-    return <DetailPresenter result={result} error={error} loading={loading} />;
+    const { result, loading }: any = this.state;
+    return <DetailPresenter result={result} loading={loading} />;
   }
 }
