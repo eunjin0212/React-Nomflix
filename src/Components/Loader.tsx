@@ -1,6 +1,15 @@
 import React from "react";
 import styled from "styled-components";
 
+const Loader = () => (
+  <Container>
+    <span role="img" aria-label="Loading">
+      ⏰
+    </span>
+  </Container>
+);
+export default Loader;
+
 const Container = styled.div`
   height: 100vh;
   width: 100vw;
@@ -9,11 +18,3 @@ const Container = styled.div`
   font-size: 32px;
   margin-top: 20px;
 `;
-// eslint-disable-next-line
-export default () => (
-  <Container>
-    <span role="img" aria-label="Loading">
-      ⏰
-    </span>
-  </Container>
-);
