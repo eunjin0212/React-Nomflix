@@ -35,4 +35,6 @@ const Grid = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fill, 125px);
   grid-gap: 25px;
+  align-items: center;
+  place-content: center;
 `;
