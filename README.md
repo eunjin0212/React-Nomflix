@@ -1,4 +1,4 @@
-# React-Nomflix 🖥 (with.Nicolas)
+# React-Nomflix 🖥
 
 [Go to Nomflix](https://eunjin-nomflix.netlify.app/#/)
 
